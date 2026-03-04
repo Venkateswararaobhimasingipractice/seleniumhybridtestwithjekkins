@@ -11,7 +11,7 @@ public class TestRailManager {
     static String BASE_URL = "https://venkatauto.testrail.io";
     static String USER = "srinu515880@gmail.com";
     static String API_KEY = "9RCXVFBFwkZdJxGzOnvb-TzlT4TFaEiErXpudz.5u";
-    static String RUN_ID = System.getenv("RUN_ID"); // Jenkins will pass this
+    static String RUN_ID = System.getProperty("runId"); // Jenkins will pass this
 
     public static void updateResult(String caseId, int statusId) {
         try {
