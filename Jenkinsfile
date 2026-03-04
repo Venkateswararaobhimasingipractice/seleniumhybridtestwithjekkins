@@ -1,5 +1,11 @@
 pipeline {
     agent any
+    
+    environment {
+        JIRA_EMAIL = credentials('jira-email')
+        JIRA_TOKEN = credentials('jira-api-token')
+    }
+
 
     stages {
         stage('Checkout Code') {
@@ -36,11 +42,13 @@ pipeline {
             }
         }
 
-        stage('Run Selenium Tests') {
-            steps {
-                // Now passing both the Run ID and the Issue Key to Maven
+        steps {
                 bat """
-                mvn clean test -DrunId=%TESTRAIL_RUN_ID% -DissueKey=%ISSUE_KEY%
+                mvn clean test ^
+                -DrunId=%TESTRAIL_RUN_ID% ^
+                -DissueKey=%ISSUE_KEY% ^
+                -DjiraEmail=%JIRA_EMAIL% ^
+                -DjiraToken=%JIRA_TOKEN%
                 """
             }
         }

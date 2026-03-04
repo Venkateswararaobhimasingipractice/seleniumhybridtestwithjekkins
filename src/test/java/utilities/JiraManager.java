@@ -11,8 +11,9 @@ public class JiraManager {
 
 	    private static final String JIRA_BASE_URL = "https://venkatesh-pratice.atlassian.net";
 	    private static final String EMAIL = "srinu19773@gmail.com";
-	    private static final String API_TOKEN = "ATATT3xFfGF0Oa2mjSpq-PL71wKPiUrbP4nllVDynir8qNQugaxRIjfOMYNF_P8W78wdtEEUVAWtnYxef83AcLHDLD1Kcp4XIRNkLG49hzmB5OcBYjTUM4Zg2ss6QY7WCFfsAPLZzmFyPcMsvlIAtlNBI0EbgLWJbK-9qF3vuzs8oDdtW2f6Nfo=3981870B";
-
+	    private static final String API_TOKEN = System.getProperty("jiraToken");
+	    		
+	    		
 	    public static void moveIssueToDone(String issueKey) {
 
 	        try {
