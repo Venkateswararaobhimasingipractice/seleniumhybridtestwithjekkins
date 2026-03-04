@@ -2,6 +2,7 @@ package testCases;
 
 
 
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -62,7 +63,7 @@ public class VerifyInvalidEmailFormatValidation extends BaseClass {
 		
 		if(st) {
 			//hp.clickLogout();
-			Assert.assertTrue(true);
+			Assert.assertTrue(false);
 		
 		logger.info("Test passed...");
 		}else {
