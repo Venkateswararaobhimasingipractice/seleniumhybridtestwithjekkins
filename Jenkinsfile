@@ -42,7 +42,8 @@ pipeline {
             }
         }
 
-        steps {
+        stage('Run Selenium Tests') {
+            steps {
                 bat """
                 mvn clean test ^
                 -DrunId=%TESTRAIL_RUN_ID% ^
@@ -51,6 +52,7 @@ pipeline {
                 -DjiraToken=%JIRA_TOKEN%
                 """
             }
+        }
         }
     }
 }
