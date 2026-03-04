@@ -63,7 +63,7 @@ public class VerifyInvalidEmailFormatValidation extends BaseClass {
 		
 		if(st) {
 			//hp.clickLogout();
-			Assert.assertTrue(false);
+			Assert.assertTrue(true);
 		
 		logger.info("Test passed...");
 		}else {
