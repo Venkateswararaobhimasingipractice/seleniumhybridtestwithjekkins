@@ -129,6 +129,28 @@ public class ExtentReportManager implements ITestListener {
 		
 		try {
 			Desktop.getDesktop().browse(extentReport.toURI());
+			
+			int total = testContext.getAllTestMethods().length;
+		    int passed = testContext.getPassedTests().size();
+		    int failed = testContext.getFailedTests().size();
+		    int skipped = testContext.getSkippedTests().size();
+
+		    System.out.println("Total: " + total);
+		    System.out.println("Passed: " + passed);
+		    System.out.println("Failed: " + failed);
+		    System.out.println("Skipped: " + skipped);
+
+		    String issueKey = System.getProperty("issueKey");
+
+		    if (total == passed && issueKey != null && !issueKey.isEmpty()) {
+
+		        System.out.println("All test cases passed. Moving Jira issue to DONE...");
+		        JiraManager.moveIssueToDone(issueKey);
+
+		    } else {
+		        System.out.println("Not all tests passed. Jira will not be updated.");
+		    }
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
