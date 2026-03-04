@@ -6,6 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Base64;
 
+
 public class JiraManager {
 
 	    private static final String JIRA_BASE_URL = "https://venkatesh-pratice.atlassian.net";
