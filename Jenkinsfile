@@ -14,6 +14,7 @@ pipeline {
                     url: 'https://github.com/Venkateswararaobhimasingipractice/seleniumhybridtestwithjekkins.git'
             }
         }
+        
 
         stage('Read TestRail and Jira Data') {
             steps {
@@ -53,6 +54,6 @@ pipeline {
                 """
             }
         }
-        }
+        
     }
 }
